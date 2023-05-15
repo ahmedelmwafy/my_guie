@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:my_guie/core/color.dart';
 import 'package:my_guie/core/imgs.dart';
+import 'package:my_guie/core/shadow.dart';
+import 'package:my_guie/core/size.dart';
 import 'package:my_guie/helpers/navigation.dart';
 import 'package:my_guie/screens/home/view.dart';
+import 'package:my_guie/screens/terms/view.dart';
+import 'package:my_guie/widgets/btn.dart';
 import 'package:my_guie/widgets/svg.dart';
 
 class OnboardingPage extends StatefulWidget {
@@ -39,26 +43,36 @@ class _OnboardingPageState extends State<OnboardingPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Column(
-        children: [
-          Expanded(
-            child: PageView.builder(
-              controller: pageController,
-              itemCount: onboardingPages.length,
-              onPageChanged: (int index) {
-                setState(() {
-                  currentPage = index;
-                });
-              },
-              itemBuilder: (BuildContext context, int index) {
-                return onboardingPages[index];
-              },
+      body: Padding(
+        padding: const EdgeInsets.all(25),
+        child: Column(
+          children: [
+            Expanded(
+              child: PageView.builder(
+                controller: pageController,
+                itemCount: onboardingPages.length,
+                onPageChanged: (int index) {
+                  setState(() {
+                    currentPage = index;
+                  });
+                },
+                itemBuilder: (BuildContext context, int index) {
+                  return onboardingPages[index];
+                },
+              ),
             ),
-          ),
-          buildIndicators(),
-          const SizedBox(height: 16),
-          buildContinueButton(),
-        ],
+            buildIndicators(),
+            const SizedBox(height: 80),
+            buildContinueButton(),
+            heght20,
+            customBorderButton(
+                context: context,
+                title: 'Skip',
+                onTap: () {
+                  RouteManager.navigateTo(const Terms());
+                })
+          ],
+        ),
       ),
     );
   }
@@ -69,8 +83,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
       children: onboardingPages.map((page) {
         int index = onboardingPages.indexOf(page);
         return Container(
-          width:currentPage == index ? 24 : 10,
-          height:  10,
+          width: currentPage == index ? 24 : 10,
+          height: 10,
           margin: const EdgeInsets.symmetric(horizontal: 4),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
@@ -90,14 +104,22 @@ class _OnboardingPageState extends State<OnboardingPage> {
             curve: Curves.easeInOut,
           );
         } else {
-          // Perform any actions after onboarding is completed
-          // For example, navigate to the home screen
           RouteManager.navigateTo(const HomeScreen());
         }
       },
-      child: Text(
-        currentPage < onboardingPages.length - 1 ? 'Next' : 'Get Started',
-        style: const TextStyle(fontSize: 18),
+      child: Container(
+        padding: const EdgeInsets.all(10),
+        width: MediaQuery.of(context).size.width,
+        decoration: BoxDecoration(
+            boxShadow: const [customShadow],
+            color: kMainColor,
+            borderRadius: BorderRadius.circular(10)),
+        child: Center(
+          child: Text(
+            currentPage < onboardingPages.length - 1 ? 'Next' : 'Start',
+            style: const TextStyle(fontSize: 18, color: kWhiteColor),
+          ),
+        ),
       ),
     );
   }

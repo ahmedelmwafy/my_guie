@@ -14,13 +14,17 @@ class MyGuide extends StatelessWidget {
       navigatorKey: navigatorKey,
       onGenerateRoute: onGenerateRoute,
       theme: ThemeData(
-        fontFamily: 'NotoSerif',
-        scaffoldBackgroundColor: kWhiteColor,
-        appBarTheme: const AppBarTheme(
-          color: kWhiteColor,
-          elevation: 0
-        )
-      ),
+          fontFamily: 'NotoSerif',
+          scaffoldBackgroundColor: kWhiteColor,
+          appBarTheme: const AppBarTheme(
+              iconTheme: IconThemeData(
+                color: kMainColor, // Set your desired icon color here
+              ),
+              titleTextStyle: TextStyle(
+                color: kMainColor,
+              ),
+              color: kWhiteColor,
+              elevation: 0)),
       home: const SplashScreen(),
     );
   }
