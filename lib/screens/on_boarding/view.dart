@@ -5,6 +5,8 @@ import 'package:my_guie/core/shadow.dart';
 import 'package:my_guie/core/size.dart';
 import 'package:my_guie/helpers/navigation.dart';
 import 'package:my_guie/screens/home/view.dart';
+import 'package:my_guie/screens/login/view.dart';
+import 'package:my_guie/screens/sign_up/view.dart';
 import 'package:my_guie/screens/terms/view.dart';
 import 'package:my_guie/widgets/btn.dart';
 import 'package:my_guie/widgets/svg.dart';
@@ -104,7 +106,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
             curve: Curves.easeInOut,
           );
         } else {
-          RouteManager.navigateTo(const HomeScreen());
+          RouteManager.navigateTo(const SignUp());
         }
       },
       child: Container(

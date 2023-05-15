@@ -5,7 +5,6 @@ import 'package:my_guie/core/size.dart';
 import 'package:my_guie/core/validation.dart';
 import 'package:my_guie/helpers/navigation.dart';
 import 'package:my_guie/screens/bar_code/view.dart';
-import 'package:my_guie/screens/login/view.dart';
 import 'package:my_guie/screens/sign_up/cubit.dart';
 import 'package:my_guie/screens/sign_up/states.dart';
 import 'package:my_guie/widgets/btn.dart';
@@ -98,9 +97,7 @@ class _SignUpState extends State<SignUp> {
                     heght20,
                     Center(
                       child: GestureDetector(
-                        onTap: () {
-                          RouteManager.navigateTo(const Login());
-                        },
+                        onTap: () {},
                         child: const Text(
                           'Already have an account? sign in',
                           style: TextStyle(color: kMainColor),

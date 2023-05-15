@@ -44,14 +44,14 @@ class _LoginState extends State<Login> {
                   padding: const EdgeInsets.all(25),
                   children: [
                     customSvg(name: 'login'),
-                    customTextField(
+                    CustomTextField(
                         keyboardType: TextInputType.emailAddress,
                         hint: 'Email',
                         validator: validateEmail,
                         controller: cubit.emailController,
                         icon: Icons.email),
                     heght10,
-                    customTextField(
+                    CustomTextField(
                         obscureText: true,
                         hint: 'Password',
                         keyboardType: TextInputType.visiblePassword,
