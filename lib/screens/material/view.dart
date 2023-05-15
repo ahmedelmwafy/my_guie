@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_guie/core/color.dart';
 import 'package:my_guie/helpers/navigation.dart';
 import 'package:my_guie/screens/splash/view.dart';
 
@@ -14,6 +15,11 @@ class MyGuide extends StatelessWidget {
       onGenerateRoute: onGenerateRoute,
       theme: ThemeData(
         fontFamily: 'NotoSerif',
+        scaffoldBackgroundColor: kWhiteColor,
+        appBarTheme: const AppBarTheme(
+          color: kWhiteColor,
+          elevation: 0
+        )
       ),
       home: const SplashScreen(),
     );
