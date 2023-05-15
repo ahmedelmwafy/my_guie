@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "756323702784",
+    "project_id": "myguide-860ba",
+    "storage_bucket": "myguide-860ba.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:756323702784:android:ad519178a3fd1a407f20e5",
+        "android_client_info": {
+          "package_name": "com.my.guide"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "756323702784-bgubp17lr8hqckcqtsr22es6sb4iqc2n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDl_eJgUIyWFXrEmm8hLFgNDNlTGs-PHX4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "756323702784-bgubp17lr8hqckcqtsr22es6sb4iqc2n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
