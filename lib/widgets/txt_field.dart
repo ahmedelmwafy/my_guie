@@ -50,16 +50,18 @@ class _CustomTextFieldState extends State<CustomTextField> {
           border: InputBorder.none,
           hintText: widget.hint,
           prefixIcon: Icon(widget.icon),
-          suffixIcon: IconButton(
-            icon: Icon(
-              _obscureText ? Icons.visibility_off : Icons.visibility,
-            ),
-            onPressed: () {
-              setState(() {
-                _obscureText = !_obscureText;
-              });
-            },
-          ),
+          suffixIcon: widget.obscureText == false
+              ? const SizedBox()
+              : IconButton(
+                  icon: Icon(
+                    _obscureText ? Icons.visibility_off : Icons.visibility,
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      _obscureText = !_obscureText;
+                    });
+                  },
+                ),
         ),
       ),
     );
