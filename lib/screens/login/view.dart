@@ -63,7 +63,7 @@ class _LoginState extends State<Login> {
                     ),
                     customButton(
                         context: context,
-                        title: 'Sign up',
+                        title: 'login',
                         onTap: () {
                           if (cubit.formKey.currentState!.validate()) {
                             cubit.formKey.currentState!.save();
