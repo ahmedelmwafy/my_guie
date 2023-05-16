@@ -4,7 +4,7 @@ import 'package:my_guie/core/color.dart';
 import 'package:my_guie/core/size.dart';
 import 'package:my_guie/core/validation.dart';
 import 'package:my_guie/helpers/navigation.dart';
-import 'package:my_guie/screens/bar_code/view.dart';
+import 'package:my_guie/screens/qr_code/view.dart';
 import 'package:my_guie/screens/login/view.dart';
 import 'package:my_guie/screens/sign_up/cubit.dart';
 import 'package:my_guie/screens/sign_up/states.dart';
